@@ -1,15 +1,14 @@
 /* =========================================
-   1. ROOT & DASAR (Vibes Coquette)
+   1. GLOBAL & VARIABEL (Vibe Coquette)
    ========================================= */
 :root {
-  --soft-pink: #fce4ec;      /* Latar belakang lembut */
-  --accent-pink: #ff80ab;    /* Warna utama (Coquette pink) */
-  --deep-rose: #c2185b;      /* Untuk teks dan link */
-  --cream: #fff9fb;          /* Putih tulang feminin */
+  --coquette-pink: #ffdae9;    /* Pink lembut */
+  --matcha-green: #e2f0d9;    /* Hijau muda segar */
+  --deep-pink: #f48fb1;       /* Aksen pink gelap */
+  --forest-green: #7ca982;    /* Aksen hijau untuk teks */
   --white: #ffffff;
+  --soft-shadow: 0 10px 25px rgba(244, 143, 177, 0.2);
   --font-main: 'Poppins', sans-serif;
-  --shadow: 0 8px 20px rgba(255, 128, 171, 0.15);
-  --radius: 20px;            /* Sudut membulat agar lebih soft */
 }
 
 * {
@@ -21,159 +20,164 @@
 
 body {
   font-family: var(--font-main);
-  background-color: var(--cream);
-  color: var(--deep-rose);
+  background-color: #fff9fb; /* Putih tulang semu pink */
+  color: var(--forest-green);
   overflow-x: hidden;
 }
 
 /* =========================================
-   2. NAVIGASI (Bersih & Elegan)
+   2. NAVIGASI (Bersih & Estetik)
    ========================================= */
 header {
   position: fixed;
-  top: 0;
-  width: 100%;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
   background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(10px); /* Efek kaca kekinian */
-  padding: 15px 5%;
+  backdrop-filter: blur(10px);
+  padding: 15px 30px;
+  border-radius: 50px;
   z-index: 1000;
-  border-bottom: 2px solid var(--soft-pink);
+  box-shadow: var(--soft-shadow);
+  border: 1px solid var(--coquette-pink);
 }
 
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
 }
 
 .logo {
-  font-size: 1.5rem;
   font-weight: 600;
-  color: var(--accent-pink);
+  font-size: 1.2rem;
+  color: var(--deep-pink);
   letter-spacing: 1px;
 }
 
 .logo span {
-  color: var(--deep-rose);
+  color: var(--forest-green);
 }
 
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 25px;
+  gap: 20px;
 }
 
 .nav-links a {
   text-decoration: none;
-  color: var(--deep-rose);
+  color: var(--forest-green);
+  font-size: 0.9rem;
   font-weight: 400;
   transition: 0.3s;
-  font-size: 0.95rem;
 }
 
 .nav-links a:hover {
-  color: var(--accent-pink);
-  transform: translateY(-2px);
+  color: var(--deep-pink);
+  letter-spacing: 1px;
 }
 
 /* =========================================
-   3. HERO SECTION (Playful)
+   3. HERO SECTION
    ========================================= */
 .hero-kelompok {
   height: 100vh;
-  background: linear-gradient(rgba(252, 228, 236, 0.8), rgba(252, 228, 236, 0.8)), 
-              url('https://www.transparenttextures.com/patterns/cubes.png'); /* Pattern halus */
   display: flex;
   align-items: center;
   justify-content: center;
+  background: linear-gradient(135deg, var(--coquette-pink) 0%, var(--matcha-green) 100%);
   text-align: center;
+  position: relative;
 }
 
 .hero-overlay h1 {
   font-size: 4rem;
-  color: var(--deep-rose);
+  color: var(--white);
+  text-shadow: 3px 3px var(--deep-pink);
   margin-bottom: 10px;
-  text-shadow: 2px 2px var(--white);
+}
+
+.hero-overlay p {
+  color: var(--forest-green);
+  font-style: italic;
 }
 
 .btn-cek {
   display: inline-block;
-  padding: 12px 35px;
-  background: var(--accent-pink);
-  color: white;
+  padding: 12px 30px;
+  background-color: var(--white);
+  color: var(--deep-pink);
   border-radius: 50px;
   text-decoration: none;
   font-weight: 600;
-  transition: 0.4s;
-  box-shadow: 0 4px 15px rgba(255, 128, 171, 0.4);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: 0.3s ease;
   border: 2px solid transparent;
 }
 
 .btn-cek:hover {
-  background: white;
-  color: var(--accent-pink);
-  border: 2px solid var(--accent-pink);
-  transform: scale(1.05);
+  background-color: var(--deep-pink);
+  color: var(--white);
+  transform: translateY(-3px);
 }
 
 /* =========================================
-   4. GRID ANGGOTA (Proporsional)
+   4. KELOMPOK GRID (Kartu Anggota)
    ========================================= */
 .section-container {
-  padding: 100px 10%;
+  padding: 100px 5%;
 }
 
 .section-title {
   text-align: center;
   font-size: 2.5rem;
-  margin-bottom: 60px;
-  position: relative;
+  color: var(--deep-pink);
+  margin-bottom: 50px;
 }
 
 .section-title::after {
-  content: '🎀'; /* Ikon pita coquette */
-  display: block;
-  font-size: 1.5rem;
-  margin-top: 10px;
+  content: ' 🎀'; /* Sentuhan Coquette */
 }
 
 .kelompok-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .kelompok-card {
   background: var(--white);
-  border-radius: var(--radius);
+  border-radius: 25px;
   overflow: hidden;
-  box-shadow: var(--shadow);
   text-decoration: none;
-  transition: 0.3s;
-  border: 1px solid var(--soft-pink);
+  box-shadow: var(--soft-shadow);
+  transition: 0.4s;
+  border: 1px solid var(--matcha-green);
 }
 
 .kelompok-card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-10px) rotate(1deg);
 }
 
-/* Menjaga ukuran gambar agar seragam dan tidak aneh */
+/* Mengatur Foto agar tidak kebesaran/kekecilan */
 .card-img {
   width: 100%;
-  height: 300px; /* Ukuran tetap */
+  height: 250px; /* Tinggi seragam */
   overflow: hidden;
 }
 
 .card-img img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Gambar akan terpotong rapi, tidak gepeng */
+  object-fit: cover; /* Kunci agar foto tetap rapi dan tidak gepeng */
   transition: 0.5s;
 }
 
-.kelompok-card:hover .card-img img {
+.kelompok-card:hover img {
   transform: scale(1.1);
 }
 
@@ -182,17 +186,78 @@ nav {
   text-align: center;
 }
 
-/* =========================================
-   5. LAPORAN & VIDEO (Rapi & Responsif)
-   ========================================= */
-.pdf-container, .video-container {
-  border: 8px solid var(--white);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  background: var(--white);
-  max-width: 850px;
-  margin: 0 auto;
+.card-info h3 {
+  color: var(--forest-green);
+  font-size: 1.1rem;
 }
 
-.video-container {
-    aspect-ratio: 16 /
+/* =========================================
+   5. LAPORAN & VIDEO (Responsif)
+   ========================================= */
+.pdf-container, .video-container {
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--soft-shadow);
+  border: 5px solid var(--white);
+}
+
+.pdf-container { height: 500px; }
+
+/* =========================================
+   6. ANIMASI AYAM PIXEL (The Cute Part!)
+   ========================================= */
+/* Kita buat ayam pixel menggunakan pseudo-element */
+body::before {
+  content: '🐣'; /* Emoji ayam sebagai pengganti gambar pixel agar simple */
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 3rem;
+  z-index: 2000;
+  animation: walkAyam 5s linear infinite;
+}
+
+@keyframes walkAyam {
+  0% { transform: translateX(50px) rotate(0deg); }
+  25% { transform: translateY(-10px) rotate(10deg); }
+  50% { transform: translateX(-20px) translateY(0) rotate(0deg); }
+  75% { transform: translateY(-10px) rotate(-10deg); }
+  100% { transform: translateX(50px) rotate(0deg); }
+}
+
+/* Dekorasi Pita di Pojok */
+body::after {
+  content: '🎀';
+  position: fixed;
+  top: 100px;
+  left: 20px;
+  font-size: 2rem;
+  opacity: 0.3;
+  animation: floatPita 3s ease-in-out infinite;
+}
+
+@keyframes floatPita {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+/* =========================================
+   7. FOOTER
+   ========================================= */
+footer {
+  background: var(--matcha-green);
+  padding: 30px;
+  text-align: center;
+  color: var(--forest-green);
+  font-size: 0.9rem;
+  margin-top: 50px;
+}
+
+/* Responsif untuk HP */
+@media (max-width: 768px) {
+  .hero-overlay h1 { font-size: 2.5rem; }
+  .nav-links { display: none; } /* Sembunyikan menu di HP agar rapi */
+  .section-container { padding: 60px 20px; }
+}
