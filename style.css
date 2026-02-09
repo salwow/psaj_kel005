@@ -2,12 +2,13 @@
    1. GLOBAL & VARIABEL (Vibe Coquette)
    ========================================= */
 :root {
-  --coquette-pink: #ffdae9;    /* Pink lembut */
-  --matcha-green: #e2f0d9;    /* Hijau muda segar */
-  --deep-pink: #f48fb1;       /* Aksen pink gelap */
-  --forest-green: #7ca982;    /* Aksen hijau untuk teks */
+  --coquette-pink: #fbcce1;    /* Pink lembut/pastel */
+  --matcha-green: #dcedc1;    /* Hijau matcha lembut */
+  --deep-rose: #f06292;       /* Pink tua untuk aksen */
+  --sage-green: #a8e6cf;      /* Hijau untuk hover */
   --white: #ffffff;
-  --soft-shadow: 0 10px 25px rgba(244, 143, 177, 0.2);
+  --text-color: #5d4037;      /* Cokelat tua lembut, lebih hangat dari hitam */
+  --soft-shadow: 0 10px 20px rgba(251, 204, 225, 0.3);
   --font-main: 'Poppins', sans-serif;
 }
 
@@ -20,23 +21,23 @@
 
 body {
   font-family: var(--font-main);
-  background-color: #fff9fb; /* Putih tulang semu pink */
-  color: var(--forest-green);
+  background-color: #fffafb; /* Latar putih semu pink */
+  color: var(--text-color);
   overflow-x: hidden;
 }
 
 /* =========================================
-   2. NAVIGASI (Bersih & Estetik)
+   2. NAVIGASI (Floating & Clean)
    ========================================= */
 header {
   position: fixed;
-  top: 20px;
+  top: 15px;
   left: 50%;
   transform: translateX(-50%);
   width: 90%;
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(10px);
-  padding: 15px 30px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  padding: 12px 25px;
   border-radius: 50px;
   z-index: 1000;
   box-shadow: var(--soft-shadow);
@@ -51,13 +52,12 @@ nav {
 
 .logo {
   font-weight: 600;
-  font-size: 1.2rem;
-  color: var(--deep-pink);
-  letter-spacing: 1px;
+  font-size: 1.1rem;
+  color: var(--deep-rose);
 }
 
 .logo span {
-  color: var(--forest-green);
+  color: var(--sage-green);
 }
 
 .nav-links {
@@ -68,15 +68,14 @@ nav {
 
 .nav-links a {
   text-decoration: none;
-  color: var(--forest-green);
+  color: var(--text-color);
   font-size: 0.9rem;
-  font-weight: 400;
   transition: 0.3s;
 }
 
 .nav-links a:hover {
-  color: var(--deep-pink);
-  letter-spacing: 1px;
+  color: var(--deep-rose);
+  letter-spacing: 0.5px;
 }
 
 /* =========================================
@@ -88,231 +87,25 @@ nav {
   align-items: center;
   justify-content: center;
   background: linear-gradient(135deg, var(--coquette-pink) 0%, var(--matcha-green) 100%);
-  text-align: center;
   position: relative;
+  text-align: center;
 }
 
 .hero-overlay h1 {
-  font-size: 4rem;
+  font-size: 3.5rem;
   color: var(--white);
-  text-shadow: 3px 3px var(--deep-pink);
-  margin-bottom: 10px;
+  text-shadow: 2px 2px var(--deep-rose);
+  margin-bottom: 5px;
 }
 
 .hero-overlay p {
-  color: var(--forest-green);
-  font-style: italic;
+  font-weight: 300;
+  letter-spacing: 1px;
 }
 
 .btn-cek {
   display: inline-block;
-  padding: 12px 30px;
-  background-color: var(--white);
-  color: var(--deep-pink);
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: 600;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-  transition: 0.3s ease;
-  border: 2px solid transparent;
-}
-
-.btn-cek:hover {
-  background-color: var(--deep-pink);
-  color: var(--white);
-  transform: translateY(-3px);
-}
-
-/* =========================================
-   4. KELOMPOK GRID (Kartu Anggota)
-   ========================================= */
-.section-container {
-  padding: 100px 5%;
-}
-
-.section-title {
-  text-align: center;
-  font-size: 2.5rem;
-  color: var(--deep-pink);
-  margin-bottom: 50px;
-}
-
-.section-title::after {
-  content: ' 🎀'; /* Sentuhan Coquette */
-}
-
-.kelompok-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.kelompok-card {
+  padding: 10px 25px;
   background: var(--white);
-  border-radius: 25px;
-  overflow: hidden;
-  text-decoration: none;
-  box-shadow: var(--soft-shadow);
-  transition: 0.4s;
-  border: 1px solid var(--matcha-green);
-}
-
-.kelompok-card:hover {
-  transform: translateY(-10px) rotate(1deg);
-}
-
-/* Mengatur Foto agar tidak kebesaran/kekecilan */
-.card-img {
-  width: 100%;
-  height: 250px; /* Tinggi seragam */
-  overflow: hidden;
-}
-
-.card-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Kunci agar foto tetap rapi dan tidak gepeng */
-  transition: 0.5s;
-}
-
-.kelompok-card:hover img {
-  transform: scale(1.1);
-}
-
-.card-info {
-  padding: 20px;
-  text-align: center;
-}
-
-.card-info h3 {
-  color: var(--forest-green);
-  font-size: 1.1rem;
-}
-
-
-  background: var(--white); /* Memberi latar belakang putih di sekitar video */
-  border-radius: 30px;  
- 
-/* =========================================
-   5. DOKUMENTASI VIDEO (Normal & Responsif)
-   ========================================= */
-/* Tambahan: Pastikan video iframe juga tertutup dengan benar di HTML Anda */
-
-.content-desc {
-  text-align: center;
-  margin-top: 10px;
-}
-
-/* Untuk Video */
-.video-wrapper {
-  max-width: 800px;         /* Batas lebar video agar tidak terlalu besar */
-  margin: 0 auto;           /* Posisi tengah */
-}
-
-.video-container {
-  position: relative;       /* Diperlukan untuk trik rasio */
-  padding-bottom: 56.25%;   /* Rasio 16:9 (Standar YouTube/Video) */
-  height: 0;
-  overflow: hidden;
-  border-radius: 15px;
-  box-shadow: var(--shadow);
-  background: #000;
-}
-
-.video-container iframe {
-  position: absolute;       /* Video menempel penuh di dalam container */
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
-
-.video-desc {
-  margin-top: 20px;
-  color: #555;
-  font-style: italic;
-
-  /* =========================================
-   6. LAPORAN & VIDEO (RESPONSIVE)
-   Agar PDF dan Video tampil rapi
-   ========================================= */
-
-/* Untuk Laporan PDF */
-.content-wrapper {
-  display: flex;            /* Flexbox agar PDF dan deskripsi bersebelahan */
-  flex-direction: column;   /* Defaultnya atas bawah dulu */
-  gap: 20px;
-  align-items: center;
-}
-
-/* Cari bagian ini di style.css Anda dan sesuaikan nilainya */
-
-.pdf-container {
-  width: 100%;              /* Mengambil seluruh lebar container */
-  max-width: 900px;         /* Batas maksimal agar tidak terlalu lebar di monitor besar */
-  height: 600px;            /* Ditambah tingginya agar lebih nyaman dibaca */
-  border: 2px solid #eee;   
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: var(--shadow);
-  margin: 0 auto;           /* Mengetengahkan PDF */
-}
-
-/* Tambahan: Pastikan video iframe juga tertutup dengan benar di HTML Anda */
-
-.content-desc {
-  text-align: center;
-  margin-top: 10px;
-}
-  
-/* =========================================
-   6. ANIMASI AYAM PIXEL (The Cute Part!)
-   ========================================= */
-/* Kita buat ayam pixel menggunakan pseudo-element */
-body::before {
-  content: '🐣'; /* Emoji ayam sebagai pengganti gambar pixel agar simple */
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  font-size: 3rem;
-  z-index: 2000;
-  animation: walkAyam 5s linear infinite;
-}
-
-@keyframes walkAyam {
-  0% { transform: translateX(50px) rotate(0deg); }
-  25% { transform: translateY(-10px) rotate(10deg); }
-  50% { transform: translateX(-20px) translateY(0) rotate(0deg); }
-  75% { transform: translateY(-10px) rotate(-10deg); }
-  100% { transform: translateX(50px) rotate(0deg); }
-}
-
-@keyframes floatPita {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
-}
-
-/* =========================================
-   7. FOOTER
-   ========================================= */
-footer {
-  background: var(--matcha-green);
-  padding: 30px;
-  text-align: center;
-  color: var(--forest-green);
-  font-size: 0.9rem;
-  margin-top: 50px;
-}
-
-/* Responsif untuk HP */
-@media (max-width: 768px) {
-  .hero-overlay h1 { font-size: 2.5rem; }
-  .nav-links { display: none; } /* Sembunyikan menu di HP agar rapi */
-  .section-container { padding: 60px 20px; }
-}
-
-
-
-
+  color: var(--deep-rose);
+  border-radius: 5
