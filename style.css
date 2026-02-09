@@ -194,17 +194,44 @@ nav {
 /* =========================================
    5. LAPORAN & VIDEO (Responsif)
    ========================================= */
-.pdf-container, .video-container {
-  max-width: 800px;
+
+#video .container {
+  max-width: 900px;         /* Membatasi lebar maksimal agar tidak memenuhi layar monitor lebar */
   margin: 0 auto;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: var(--soft-shadow);
-  border: 5px solid var(--white);
 }
 
-.pdf-container { height: 500px; }
+.video-wrapper {
+  padding: 20px;
+  background: var(--white); /* Memberi latar belakang putih di sekitar video */
+  border-radius: 30px;      /* Sudut sangat membulat khas Coquette */
+  box-shadow: var(--soft-shadow);
+  border: 2px dashed var(--coquette-pink); /* Garis putus-putus estetik */
+}
 
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;   /* Rasio 16:9 agar video tidak gepeng */
+  height: 0;
+  overflow: hidden;
+  border-radius: 20px;      /* Sudut dalam juga membulat */
+  background: #f1f1f1;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.video-desc {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: var(--forest-green);
+  letter-spacing: 0.5px;
+}
 /* =========================================
    6. ANIMASI AYAM PIXEL (The Cute Part!)
    ========================================= */
@@ -261,3 +288,4 @@ footer {
   .nav-links { display: none; } /* Sembunyikan menu di HP agar rapi */
   .section-container { padding: 60px 20px; }
 }
+
