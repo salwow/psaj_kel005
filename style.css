@@ -234,7 +234,38 @@ nav {
   color: #555;
   font-style: italic;
 
-  
+  /* =========================================
+   6. LAPORAN & VIDEO (RESPONSIVE)
+   Agar PDF dan Video tampil rapi
+   ========================================= */
+
+/* Untuk Laporan PDF */
+.content-wrapper {
+  display: flex;            /* Flexbox agar PDF dan deskripsi bersebelahan */
+  flex-direction: column;   /* Defaultnya atas bawah dulu */
+  gap: 20px;
+  align-items: center;
+}
+
+/* Cari bagian ini di style.css Anda dan sesuaikan nilainya */
+
+.pdf-container {
+  width: 100%;              /* Mengambil seluruh lebar container */
+  max-width: 900px;         /* Batas maksimal agar tidak terlalu lebar di monitor besar */
+  height: 600px;            /* Ditambah tingginya agar lebih nyaman dibaca */
+  border: 2px solid #eee;   
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  margin: 0 auto;           /* Mengetengahkan PDF */
+}
+
+/* Tambahan: Pastikan video iframe juga tertutup dengan benar di HTML Anda */
+
+.content-desc {
+  text-align: center;
+  margin-top: 10px;
+}
   
 /* =========================================
    6. ANIMASI AYAM PIXEL (The Cute Part!)
@@ -256,17 +287,6 @@ body::before {
   50% { transform: translateX(-20px) translateY(0) rotate(0deg); }
   75% { transform: translateY(-10px) rotate(-10deg); }
   100% { transform: translateX(50px) rotate(0deg); }
-}
-
-/* Dekorasi Pita di Pojok */
-body::after {
-  content: '🎀';
-  position: fixed;
-  top: 100px;
-  left: 20px;
-  font-size: 2rem;
-  opacity: 0.3;
-  animation: floatPita 3s ease-in-out infinite;
 }
 
 @keyframes floatPita {
@@ -292,6 +312,7 @@ footer {
   .nav-links { display: none; } /* Sembunyikan menu di HP agar rapi */
   .section-container { padding: 60px 20px; }
 }
+
 
 
 
