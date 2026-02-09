@@ -1,328 +1,198 @@
 /* =========================================
-   1. RESET & VARIABEL GLOBAL
-   Bagian ini mengatur dasar tampilan website
+   1. ROOT & DASAR (Vibes Coquette)
    ========================================= */
-
 :root {
-  /* Kita simpan warna di sini agar mudah diganti-ganti nanti */
-  --primary-pink: #e91e63;   /* Warna Pink Dominan (Modern Pink) */
-  --dark-black: #1a1a1a;     /* Warna Hitam Pekat untuk Background/Teks */
-  --dark-grey: #333333;      /* Abu tua untuk variasi */
-  --light-bg: #fdf2f5;       /* Putih agak pink sedikit untuk background section */
-  --white: #ffffff;          /* Putih murni */
-  --shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Efek bayangan halus */
+  --soft-pink: #fce4ec;      /* Latar belakang lembut */
+  --accent-pink: #ff80ab;    /* Warna utama (Coquette pink) */
+  --deep-rose: #c2185b;      /* Untuk teks dan link */
+  --cream: #fff9fb;          /* Putih tulang feminin */
+  --white: #ffffff;
+  --font-main: 'Poppins', sans-serif;
+  --shadow: 0 8px 20px rgba(255, 128, 171, 0.15);
+  --radius: 20px;            /* Sudut membulat agar lebih soft */
 }
 
 * {
-  margin: 0;                /* Hapus margin bawaan browser */
-  padding: 0;               /* Hapus padding bawaan browser */
-  box-sizing: border-box;   /* Pastikan padding tidak menambah lebar elemen */
-  scroll-behavior: smooth;  /* Efek scroll halus saat klik menu navigasi */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Poppins', sans-serif; /* Menggunakan font yang sudah kamu load di HTML */
-  line-height: 1.6;         /* Jarak antar baris teks agar enak dibaca */
-  color: var(--dark-black); /* Warna teks utama hitam */
-  background-color: var(--white);
+  font-family: var(--font-main);
+  background-color: var(--cream);
+  color: var(--deep-rose);
+  overflow-x: hidden;
 }
 
 /* =========================================
-   2. NAVIGASI (HEADER)
-   Menu bagian atas yang menempel saat di-scroll
+   2. NAVIGASI (Bersih & Elegan)
    ========================================= */
-
 header {
-  position: fixed;          /* Menu tetap menempel di atas layar meski di-scroll */
-  top: 0; left: 0; right: 0;/* Memastikan header memenuhi lebar layar */
-  background: var(--dark-black); /* Latar belakang hitam */
-  padding: 15px 5%;         /* Jarak dalam: Atas-Bawah 15px, Kiri-Kanan 5% */
-  z-index: 1000;            /* Pastikan menu selalu di atas elemen lain */
-  box-shadow: 0 2px 10px rgba(233, 30, 99, 0.2); /* Bayangan pink tipis di bawah menu */
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px); /* Efek kaca kekinian */
+  padding: 15px 5%;
+  z-index: 1000;
+  border-bottom: 2px solid var(--soft-pink);
 }
 
 nav {
-  display: flex;            /* Mengaktifkan Flexbox untuk menata isi menu */
-  justify-content: space-between; /* Logo di kiri, Menu di kanan (jarak berjauhan) */
-  align-items: center;      /* Posisi vertikal di tengah */
-  max-width: 1200px;        /* Batas lebar konten agar tidak terlalu melebar di layar besar */
-  margin: 0 auto;           /* Posisi nav di tengah layar */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .logo {
-  font-size: 1.5rem;        /* Ukuran font logo */
-  font-weight: 600;         /* Ketebalan font */
-  color: var(--white);      /* Warna putih */
-  text-transform: uppercase;/* Huruf besar semua */
-  letter-spacing: 2px;      /* Jarak antar huruf */
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--accent-pink);
+  letter-spacing: 1px;
 }
 
 .logo span {
-  color: var(--primary-pink); /* Mewarnai kata "Lima" dengan Pink */
+  color: var(--deep-rose);
 }
 
 .nav-links {
-  list-style: none;         /* Menghilangkan titik (bullet) pada list */
-  display: flex;            /* Membuat menu berjejer ke samping */
-}
-
-.nav-links li {
-  margin-left: 30px;        /* Jarak antar menu */
+  display: flex;
+  list-style: none;
+  gap: 25px;
 }
 
 .nav-links a {
-  text-decoration: none;    /* Menghilangkan garis bawah link */
-  color: var(--white);      /* Warna teks menu putih */
+  text-decoration: none;
+  color: var(--deep-rose);
   font-weight: 400;
-  transition: 0.3s;         /* Efek transisi halus saat di-hover */
+  transition: 0.3s;
+  font-size: 0.95rem;
 }
 
 .nav-links a:hover {
-  color: var(--primary-pink); /* Berubah pink saat mouse diarahkan */
+  color: var(--accent-pink);
+  transform: translateY(-2px);
 }
 
 /* =========================================
-   3. HERO SECTION (BERANDA)
-   Tampilan awal yang besar dan menarik
+   3. HERO SECTION (Playful)
    ========================================= */
-
 .hero-kelompok {
-  height: 100vh;            /* Tinggi memenuhi 100% layar (Viewport Height) */
-  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('img/background.jpg'); 
-  /* Note: Pastikan kamu punya gambar background.jpg di folder img. 
-     Jika tidak ada, ganti url(...) dengan background-color: var(--dark-black); */
-  background-size: cover;   /* Gambar menutupi seluruh area */
-  background-position: center; /* Gambar di tengah */
-  display: flex;            /* Flexbox untuk menengahkan konten */
-  align-items: center;      /* Tengah secara vertikal */
-  justify-content: center;  /* Tengah secara horizontal */
-  text-align: center;       /* Teks rata tengah */
-  color: var(--white);      /* Teks putih */
-  padding-top: 60px;        /* Kompensasi tertutup navbar */
-}
-
-.hero-overlay h1 {
-  font-size: 3.5rem;        /* Ukuran judul besar */
-  margin-bottom: 10px;      /* Jarak bawah */
-}
-
-.hero-overlay p {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
-}
-
-/* Styling Tombol (Button) */
-.btn-cek {
-  display: inline-block;    /* Agar padding berfungsi pada link */
-  padding: 12px 30px;       /* Ukuran tombol */
-  background: var(--primary-pink); /* Warna tombol pink */
-  color: var(--white);      /* Teks putih */
-  border-radius: 50px;      /* Membuat tombol lonjong (kapsul) */
-  text-decoration: none;    /* Hapus garis bawah */
-  font-weight: 600;
-  transition: 0.3s;         /* Transisi halus */
-  border: 2px solid var(--primary-pink); /* Border pink */
-}
-
-.btn-cek:hover {
-  background: transparent;  /* Saat hover, background hilang */
-  color: var(--primary-pink); /* Teks jadi pink */
-}
-
-/* =========================================
-   4. LAYOUT UMUM SECTION
-   Pengaturan jarak untuk setiap bagian
-   ========================================= */
-
-.section-container {
-  padding: 80px 5%;         /* Jarak dalam (atas-bawah 80px, kiri-kanan 5%) */
-}
-
-.section-title {
-  text-align: center;       /* Judul section di tengah */
-  font-size: 2rem;
-  margin-bottom: 50px;      /* Jarak antara judul dan konten di bawahnya */
-  color: var(--dark-black);
-  position: relative;       /* Untuk garis bawah dekoratif */
-}
-
-/* Membuat garis pink di bawah judul */
-.section-title::after {
-  content: '';              /* Elemen kosong */
-  display: block;
-  width: 60px;              /* Lebar garis */
-  height: 4px;              /* Tebal garis */
-  background: var(--primary-pink); /* Warna garis pink */
-  margin: 10px auto 0;      /* Posisi di tengah bawah teks */
-  border-radius: 2px;
-}
-
-/* Variasi Background */
-.bg-light {
-  background-color: var(--light-bg); /* Background agak pink muda */
-}
-.bg-white {
-  background-color: var(--white);    /* Background putih */
-}
-
-.container {
-  max-width: 1200px;        /* Lebar maksimal konten agar rapi */
-  margin: 0 auto;           /* Posisi tengah */
-}
-
-/* =========================================
-   5. ANGGOTA KELOMPOK (GRID SYSTEM)
-   Bagian kartu anggota
-   ========================================= */
-
-.kelompok-grid {
-  display: grid;            /* Menggunakan CSS Grid Layout */
-  /* Grid otomatis: Membuat kolom sebanyak yang muat, minimal lebar 250px */
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;                /* Jarak antar kartu */
-}
-
-.kelompok-card {
-  background: var(--white); /* Kartu warna putih */
-  border-radius: 15px;      /* Sudut kartu melengkung */
-  overflow: hidden;         /* Agar gambar tidak keluar dari sudut melengkung */
-  box-shadow: var(--shadow);/* Memberi bayangan */
-  text-decoration: none;    /* Hapus garis bawah link */
-  color: var(--dark-black);
-  transition: transform 0.3s ease; /* Animasi gerak saat hover */
-  border-bottom: 4px solid transparent; /* Border bawah transparan */
-}
-
-.kelompok-card:hover {
-  transform: translateY(-10px); /* Kartu naik ke atas sedikit saat hover */
-  border-bottom: 4px solid var(--primary-pink); /* Muncul garis pink di bawah */
-}
-
-.card-img {
-  width: 100%;
-  height: 250px;            /* Tinggi area gambar tetap */
-  background: #ddd;         /* Placeholder warna abu jika gambar loading */
+  height: 100vh;
+  background: linear-gradient(rgba(252, 228, 236, 0.8), rgba(252, 228, 236, 0.8)), 
+              url('https://www.transparenttextures.com/patterns/cubes.png'); /* Pattern halus */
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
 
-.card-img img {
-  width: 100%;              /* Lebar gambar memenuhi kartu */
-  height: 100%;             /* Tinggi gambar memenuhi area */
-  object-fit: cover;        /* Potong gambar agar pas (tidak gepeng) */
+.hero-overlay h1 {
+  font-size: 4rem;
+  color: var(--deep-rose);
+  margin-bottom: 10px;
+  text-shadow: 2px 2px var(--white);
 }
 
-.card-info {
-  padding: 20px;            /* Jarak dalam teks */
-  text-align: center;       /* Teks rata tengah */
+.btn-cek {
+  display: inline-block;
+  padding: 12px 35px;
+  background: var(--accent-pink);
+  color: white;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.4s;
+  box-shadow: 0 4px 15px rgba(255, 128, 171, 0.4);
+  border: 2px solid transparent;
 }
 
-.card-info h3 {
-  font-size: 1.1rem;
-  margin-bottom: 5px;
-}
-
-.card-info p {
-  color: #666;              /* Warna teks absen agak abu */
-  font-size: 0.9rem;
+.btn-cek:hover {
+  background: white;
+  color: var(--accent-pink);
+  border: 2px solid var(--accent-pink);
+  transform: scale(1.05);
 }
 
 /* =========================================
-   6. LAPORAN & VIDEO (RESPONSIVE)
-   Agar PDF dan Video tampil rapi
+   4. GRID ANGGOTA (Proporsional)
    ========================================= */
-
-/* Untuk Laporan PDF */
-.content-wrapper {
-  display: flex;            /* Flexbox agar PDF dan deskripsi bersebelahan */
-  flex-direction: column;   /* Defaultnya atas bawah dulu */
-  gap: 20px;
-  align-items: center;
+.section-container {
+  padding: 100px 10%;
 }
 
-.pdf-container {
-  width: 100%;              /* Lebar penuh */
-  height: 500px;            /* Tinggi tetap untuk area PDF */
-  border: 2px solid #eee;   /* Bingkai tipis */
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: var(--shadow);
-}
-
-.content-desc {
+.section-title {
   text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 60px;
+  position: relative;
+}
+
+.section-title::after {
+  content: '🎀'; /* Ikon pita coquette */
+  display: block;
+  font-size: 1.5rem;
   margin-top: 10px;
 }
 
-/* Untuk Video */
-.video-wrapper {
-  max-width: 800px;         /* Batas lebar video agar tidak terlalu besar */
-  margin: 0 auto;           /* Posisi tengah */
+.kelompok-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.kelompok-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  text-decoration: none;
+  transition: 0.3s;
+  border: 1px solid var(--soft-pink);
+}
+
+.kelompok-card:hover {
+  transform: translateY(-10px);
+}
+
+/* Menjaga ukuran gambar agar seragam dan tidak aneh */
+.card-img {
+  width: 100%;
+  height: 300px; /* Ukuran tetap */
+  overflow: hidden;
+}
+
+.card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Gambar akan terpotong rapi, tidak gepeng */
+  transition: 0.5s;
+}
+
+.kelompok-card:hover .card-img img {
+  transform: scale(1.1);
+}
+
+.card-info {
+  padding: 20px;
+  text-align: center;
+}
+
+/* =========================================
+   5. LAPORAN & VIDEO (Rapi & Responsif)
+   ========================================= */
+.pdf-container, .video-container {
+  border: 8px solid var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  background: var(--white);
+  max-width: 850px;
+  margin: 0 auto;
 }
 
 .video-container {
-  position: relative;       /* Diperlukan untuk trik rasio */
-  padding-bottom: 56.25%;   /* Rasio 16:9 (Standar YouTube/Video) */
-  height: 0;
-  overflow: hidden;
-  border-radius: 15px;
-  box-shadow: var(--shadow);
-  background: #000;
-}
-
-.video-container iframe {
-  position: absolute;       /* Video menempel penuh di dalam container */
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
-
-.video-desc {
-  margin-top: 20px;
-  color: #555;
-  font-style: italic;
-}
-
-/* =========================================
-   7. FOOTER
-   Bagian paling bawah
-   ========================================= */
-
-footer {
-  background: var(--dark-black); /* Hitam */
-  color: var(--white);      /* Putih */
-  text-align: center;
-  padding: 20px;
-  font-size: 0.9rem;
-  border-top: 3px solid var(--primary-pink); /* Garis batas atas pink */
-}
-
-/* =========================================
-   8. MEDIA QUERIES (RESPONSIVE)
-   Penyesuaian untuk layar HP/Tablet
-   ========================================= */
-
-@media (max-width: 768px) {
-  /* Saat layar lebih kecil dari 768px (Tablet/HP) */
-  
-  .hero-overlay h1 {
-    font-size: 2.5rem;      /* Perkecil judul hero */
-  }
-
-  nav {
-    flex-direction: column; /* Menu jadi atas bawah */
-    padding-bottom: 10px;
-  }
-
-  .nav-links {
-    margin-top: 15px;
-    gap: 15px;              /* Jarak antar menu */
-  }
-
-  .nav-links li {
-    margin-left: 0;         /* Reset margin kiri */
-    margin: 0 10px;         /* Beri jarak kiri kanan */
-  }
-}
+    aspect-ratio: 16 /
